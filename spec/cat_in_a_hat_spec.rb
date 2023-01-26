@@ -21,3 +21,5 @@ RSpec.describe "Cat in a hat" do
     expect(height(9)).to eq "3332983.808"
   end
 end
+
+
