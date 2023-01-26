@@ -3,5 +3,12 @@ def height(n)
   return cat_one if n == 0
   cat_one = cat_one.to_f
   (0...n).each { cat_one += (cat_one / 2.5).to_f }
-  (cat_one.round(3) * 1000).to_i
+  if (cat_one - cat_one.to_i).to_s.length == 3
+    cat_one.to_s << "00"
+  # elsif
+  #   (cat_one - cat_one.to_i).to_s.length == 4
+  #     cat_one.to_s << "0"
+  else
+    cat_one.round(3).to_s
+  end
 end

@@ -14,4 +14,8 @@ RSpec.describe "Cat in a hat" do
   it "tests 1 cat under hat" do
     expect(height(1)).to eq "2800000.000"
   end
+
+  it "tests 7 cats under hat" do
+    expect(height(7)).to eq "3331148.800"
+  end
 end
