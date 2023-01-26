@@ -9,7 +9,7 @@ RSpec.describe "are_the_twins_even" do
     expect(even_twins([6,2])).to eq 1
   end
 
-  xit "tests 2 digit array" do
+  it "tests 2 digit array" do
     expect(even_twins([6,3])).to eq 0
   end
 

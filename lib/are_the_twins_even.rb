@@ -10,5 +10,5 @@ def even_twins(array)
   counter = 0
   final = array_2.each {|num| (counter += 1) if num.even? }
   counter
-  binding.irb
+  # binding.irb
 end
