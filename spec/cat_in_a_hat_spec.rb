@@ -1,7 +1,5 @@
 require_relative "../lib/cat_in_a_hat"
 
-# frozen_string_literal: true
-
 RSpec.describe "Cat in a hat" do
   it "tests truth" do
     expect(true).to eq(true)
@@ -17,5 +15,9 @@ RSpec.describe "Cat in a hat" do
 
   it "tests 7 cats under hat" do
     expect(height(7)).to eq "3331148.800"
+  end
+
+    it "tests 9 cats under hat" do
+    expect(height(9)).to eq "3332983.808"
   end
 end
