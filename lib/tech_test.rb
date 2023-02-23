@@ -8,3 +8,9 @@ def diagonalDifference(arr)
     end
     (left.sum - right.sum).abs
 end
+
+def countingSort(arr)
+    sorted = arr.sort.reverse
+    sorted[1]
+    arr[0]
+end
