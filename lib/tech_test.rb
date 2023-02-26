@@ -77,9 +77,10 @@ def solution_3(a, x)
     #     return l
     # end
     # return -1
-    if a.include? x
-        a.index(x)
-    else
-        -1
-    end
+    # if a.include? x
+    #     a.index(x)
+    # else
+    #     -1
+    # end
+    (a.include? x) ? a.index(x) : -1
 end
