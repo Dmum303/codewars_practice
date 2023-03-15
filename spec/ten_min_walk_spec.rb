@@ -25,6 +25,12 @@ RSpec.describe "Ten min walk" do
     expect(ten_min_walk(['w', 's', 'e', 'n', 'n', 'e', 's', 'w', 'w', 'w'])).to eq false
   end
 
+  it "returns true with correct input" do
+     expect(ten_min_walk(['w', 's', 'e', 'e', 'n', 'n', 'e', 's', 'w', 'w'])).to eq true
+  end
 
+  it "returns true with correct input" do
+    expect(ten_min_walk("ewewewewew".chars)).to eq true
+  end
 
 end
