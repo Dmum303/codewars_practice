@@ -136,7 +136,7 @@ ten_minute_walk?(['w', 's']) # => false
 
 ---
 
-##### Scrabble
+### Scrabble
 
 Requirements
 Given a word, compute the scrabble score for that word.
