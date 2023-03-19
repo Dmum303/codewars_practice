@@ -44,4 +44,59 @@ RSpec.describe "checkout" do
     shop = Shop.new()
     expect(shop.checkout("AAAAA")).to eq 230
   end
+
+  it "returns 45  for BB" do
+    shop = Shop.new()
+    expect(shop.checkout("BB")).to eq 45
+  end
+
+  it "returns 75 for BBB" do
+    shop = Shop.new()
+    expect(shop.checkout("BBB")).to eq 75
+  end
+
+   it "returns 40 for CC" do
+    shop = Shop.new()
+    expect(shop.checkout("CC")).to eq 40
+  end
+
+   it "returns 30 for DD" do
+    shop = Shop.new()
+    expect(shop.checkout("DD")).to eq 30
+  end
+
+   it "returns -1 if any lower case letters" do
+    shop = Shop.new()
+    expect(shop.checkout("a")).to eq -1
+  end
+
+   it "returns -1 if any lower case letters" do
+    shop = Shop.new()
+    expect(shop.checkout("aB")).to eq -1
+  end
+
+   it "returns -1 if any lower case letters" do
+    shop = Shop.new()
+    expect(shop.checkout("aBc")).to eq -1
+  end
+
+   it "returns -1 if any lower case letters" do
+    shop_two = Shop.new()
+    expect(shop_two.checkout("-B8x")).to eq -1
+  end
+
+   it "returns -1 if any integer" do
+    shop = Shop.new()
+    expect(shop.checkout(18)).to eq -1
+  end
+
+   it "returns 115 if for ABCD" do
+    shop = Shop.new()
+    expect(shop.checkout("ABCD")).to eq 115
+  end
+
+   it "returns 260 if for AAAAAA" do
+    shop = Shop.new()
+    expect(shop.checkout("AAAAAA")).to eq 260
+  end
 end
