@@ -231,3 +231,12 @@ shop.checkout('AA') # => 100
 shop.checkout('ABCD') # => 115
 shop.checkout('AAA') # => 130
 shop.checkout('AAAAAA') # => 260
+
+# Reverse words
+
+DESCRIPTION:
+Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+
+Examples
+"This is an example!" ==> "sihT si na !elpmaxe"
+"double spaces" ==> "elbuod secaps"
