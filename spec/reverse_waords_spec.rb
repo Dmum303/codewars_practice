@@ -20,4 +20,16 @@ RSpec.describe "Reverse words" do
   it "reverses one word" do
     expect(reverser("dog")).to eq "god"
   end
+
+  it "reverses two words one space" do
+    expect(reverser("Dog ball")).to eq "goD llab"
+  end
+
+  it "reverses several words with one space" do
+    expect(reverser("This is an example!")).to eq "sihT si na !elpmaxe"
+  end
+
+  it "reverses several words with > space" do
+    expect(reverser("double  spaces")).to eq "elbuod  secaps"
+  end
 end
