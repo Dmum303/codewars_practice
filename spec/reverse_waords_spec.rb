@@ -32,4 +32,8 @@ RSpec.describe "Reverse words" do
   it "reverses several words with > space" do
     expect(reverser("double  spaces")).to eq "elbuod  secaps"
   end
+
+  fit "desserts stressed" do
+    expect(reverser("stressed desserts")).to eq "desserts stressed"
+  end
 end
