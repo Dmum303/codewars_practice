@@ -8,4 +8,16 @@ RSpec.describe "Reverse words" do
   it "reverses one word" do
     expect(reverser("This")).to eq "sihT"
   end
+
+  it "reverses one word" do
+    expect(reverser("is")).to eq "si"
+  end
+
+  it "reverses one word" do
+    expect(reverser("hat")).to eq "tah"
+  end
+
+  it "reverses one word" do
+    expect(reverser("dog")).to eq "god"
+  end
 end

@@ -1,3 +1,3 @@
 def reverser(string)
-  "sihT"
+  string.reverse
 end
