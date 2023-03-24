@@ -1,8 +1,13 @@
 class Checkout
   Item_A_single = 50
+  Item_B_single = 30
 
   def self.checkout(items)
-    Item_A_single
+    if items == "A"
+      Item_A_single
+    elsif items == "B"
+      Item_B_single
+    end
   end
 end
 
