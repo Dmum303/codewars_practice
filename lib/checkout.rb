@@ -1,13 +1,26 @@
 class Checkout
   Item_A_single = 50
   Item_B_single = 30
+  Item_C_single = 20
+  Item_D_single = 15
 
   def self.checkout(items)
-    if items == "A"
-      Item_A_single
-    elsif items == "B"
-      Item_B_single
+    number_items = Hash.new(0)
+    total_bill = 0
+    return -1 if items.match(/.*[a-z].*/)
+    items.split("").each { |item| number_items[item] += 1 }
+    number_items.each do |item, value|
+      if item == "A"
+        total_bill << (value * Item_A_single)
+      elsif item == "B"
+        total_bill << (value * Item_B_single)
+      elsif item == "C"
+        total_bill << (value * Item_C_single)
+      elsif item == "D"
+        total_bill << (value * Item_D_single)
+      end
     end
+    total_bill
   end
 end
 

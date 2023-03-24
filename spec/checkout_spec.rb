@@ -9,20 +9,24 @@ RSpec.describe "checkout" do
     expect(Checkout.checkout("B")).to eq 30
   end
 
-  #  it "returns 20 for C" do
-  #   shop = Shop.new()
-  #   expect(shop.checkout("C")).to eq 20
-  # end
+  it "returns 20 for C" do
+    expect(Checkout.checkout("C")).to eq 20
+  end
 
-  #  it "returns 15 for D" do
-  #   shop = Shop.new()
-  #   expect(shop.checkout("D")).to eq 15
-  # end
+  it "returns 15 for D" do
+    expect(Checkout.checkout("D")).to eq 15
+  end
 
-  # it "returns 100  for AA" do
-  #   shop = Shop.new()
-  #   expect(shop.checkout("AA")).to eq 100
-  # end
+  it "Returns -1 if any letters are lowercase, single char" do
+    expect(Checkout.checkout("a")).to eq -1
+  end
+  it "Returns -1 if any letters are lowercase, multiple char" do
+    expect(Checkout.checkout("BAaC")).to eq -1
+  end
+
+  fit "returns 100  for AA" do
+    expect(Checkout.checkout("AA")).to eq 100
+  end
 
   # it "returns 130  for AAA" do
   #   shop = Shop.new()
