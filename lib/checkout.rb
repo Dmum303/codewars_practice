@@ -1,23 +1,36 @@
 class Checkout
   Item_A_single = 50
+  Item_A_special = 130
+  Number_items_A_sepcial = 3
   Item_B_single = 30
+  Item_B_special = 45
+  Number_items_B_sepcial = 2
   Item_C_single = 20
   Item_D_single = 15
 
   def self.checkout(items)
+    return -1 if items.match(/.*[a-z].*/)
     number_items = Hash.new(0)
     total_bill = 0
-    return -1 if items.match(/.*[a-z].*/)
     items.split("").each { |item| number_items[item] += 1 }
     number_items.each do |item, value|
       if item == "A"
-        total_bill << (value * Item_A_single)
+        # binding.irb
+        total_bill +=
+          (
+            ((value / Number_items_A_sepcial).floor * Item_A_special) +
+              ((value % Number_items_A_sepcial) * Item_A_single)
+          )
       elsif item == "B"
-        total_bill << (value * Item_B_single)
+        total_bill +=
+          (
+            ((value / Number_items_B_sepcial).floor * Item_B_special) +
+              ((value % Number_items_B_sepcial) * Item_B_single)
+          )
       elsif item == "C"
-        total_bill << (value * Item_C_single)
+        total_bill += (value * Item_C_single)
       elsif item == "D"
-        total_bill << (value * Item_D_single)
+        total_bill += (value * Item_D_single)
       end
     end
     total_bill

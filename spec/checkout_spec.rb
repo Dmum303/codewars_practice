@@ -24,44 +24,37 @@ RSpec.describe "checkout" do
     expect(Checkout.checkout("BAaC")).to eq -1
   end
 
-  fit "returns 100  for AA" do
+  it "returns 100  for AA" do
     expect(Checkout.checkout("AA")).to eq 100
   end
 
-  # it "returns 130  for AAA" do
-  #   shop = Shop.new()
-  #   expect(shop.checkout("AAA")).to eq 130
-  # end
+  it "returns 130  for AAA" do
+    expect(Checkout.checkout("AAA")).to eq 130
+  end
 
-  # it "returns 180  for AAAA" do
-  #   shop = Shop.new()
-  #   expect(shop.checkout("AAAA")).to eq 180
-  # end
+  it "returns 180  for AAAA" do
+    expect(Checkout.checkout("AAAA")).to eq 180
+  end
 
-  # it "returns 230  for AAAAA" do
-  #   shop = Shop.new()
-  #   expect(shop.checkout("AAAAA")).to eq 230
-  # end
+  it "returns 230  for AAAAA" do
+    expect(Checkout.checkout("AAAAA")).to eq 230
+  end
 
-  # it "returns 45  for BB" do
-  #   shop = Shop.new()
-  #   expect(shop.checkout("BB")).to eq 45
-  # end
+  it "returns 45  for BB" do
+    expect(Checkout.checkout("BB")).to eq 45
+  end
 
-  # it "returns 75 for BBB" do
-  #   shop = Shop.new()
-  #   expect(shop.checkout("BBB")).to eq 75
-  # end
+  it "returns 75 for BBB" do
+    expect(Checkout.checkout("BBB")).to eq 75
+  end
 
-  #  it "returns 40 for CC" do
-  #   shop = Shop.new()
-  #   expect(shop.checkout("CC")).to eq 40
-  # end
+  it "returns 40 for CC" do
+    expect(Checkout.checkout("CC")).to eq 40
+  end
 
-  #  it "returns 30 for DD" do
-  #   shop = Shop.new()
-  #   expect(shop.checkout("DD")).to eq 30
-  # end
+  it "returns 30 for DD" do
+    expect(Checkout.checkout("DD")).to eq 30
+  end
 
   #  it "returns -1 if any lower case letters" do
   #   shop = Shop.new()
