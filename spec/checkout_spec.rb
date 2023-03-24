@@ -5,10 +5,9 @@ RSpec.describe "checkout" do
     expect(Checkout.checkout("A")).to eq 50
   end
 
-  # it "returns 30 for B" do
-  #   shop = Shop.new()
-  #   expect(shop.checkout("B")).to eq 30
-  # end
+  it "returns 30 for B" do
+    expect(Checkout.checkout("B")).to eq 30
+  end
 
   #  it "returns 20 for C" do
   #   shop = Shop.new()
