@@ -2,8 +2,7 @@ require_relative "../lib/checkout"
 
 RSpec.describe "checkout" do
   it "returns 50 for A" do
-    shop = Shop.new()
-    expect(shop.checkout("A")).to eq 50
+    expect(Checkout.checkout("A")).to eq 50
   end
 
   # it "returns 30 for B" do
