@@ -9,13 +9,17 @@ class Checkout
   Item_D_single = 15
 
   def self.checkout(items)
-    return -1 if items.match(/.*[a-z].*/)
+    if (
+         ((items.is_a? Integer) || (items.is_a? Float)) ||
+           (items.match(/.*[a-z].*/))
+       )
+      return -1
+    end
     number_items = Hash.new(0)
     total_bill = 0
     items.split("").each { |item| number_items[item] += 1 }
     number_items.each do |item, value|
       if item == "A"
-        # binding.irb
         total_bill +=
           (
             ((value / Number_items_A_sepcial).floor * Item_A_special) +
