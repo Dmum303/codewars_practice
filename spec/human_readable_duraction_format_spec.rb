@@ -36,4 +36,24 @@ RSpec.describe "HumanReadableDurationFormat" do
   it "returns the correct duration 3600" do
     expect(format_duraction(3662)).to eq "1 hour, 1 minute and 2 seconds"
   end
+
+  it "returns the correct duration 3600" do
+    expect(format_duraction(3662)).to eq "1 hour, 1 minute and 2 seconds"
+  end
+
+  it "returns the correct duration  86400" do
+    expect(format_duraction(86_400)).to eq "1 day"
+  end
+
+  it "returns the correct duration  15,731,080" do
+    expect(
+      format_duraction(15_731_080)
+    ).to eq "182 days, 1 hour, 44 minutes and 40 seconds"
+  end
+
+  it "returns the correct duration 132,030,240" do
+    expect(
+      format_duraction(132_030_240)
+    ).to eq "4 years, 68 days, 3 hours and 4 minutes"
+  end
 end

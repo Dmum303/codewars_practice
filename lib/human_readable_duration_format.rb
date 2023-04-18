@@ -1,9 +1,21 @@
 def format_duraction(seconds)
   return "now" if seconds == 0
   result_array = []
-  hours = seconds / 3600
-  minutes = ((seconds / 60) % 60)
+  years = seconds / 31_536_000
+  days = (seconds / 86_400) % 365
+  hours = (seconds / 3600) % 24
+  minutes = (seconds / 60) % 60
   seconds = seconds % 60
+  if years == 1
+    result_array << "#{years} year"
+  elsif years > 1
+    result_array << "#{years} years"
+  end
+  if days == 1
+    result_array << "#{days} day"
+  elsif days > 1
+    result_array << "#{days} days"
+  end
   if hours == 1
     result_array << "#{hours} hour"
   elsif hours > 1
@@ -30,8 +42,29 @@ def format_duraction(seconds)
   end
 end
 
-# Could work out seconds, minutes, hours, days, weeks, months, years
-#  Stick all the ones with > 0 into an array and if == 0 return. If greater than 1
-#  add "and" for [-1]
-# Now having the issue of commas and "and" in the right place, I imagine that a way of doing this would be to to take a slice of n-1 and join them with commas, then split back to an array and add the last element with "and" in front of it. That worked well
-#  Next add days and years
+# Lots of if statements and a large function are potentially a code smell, look at the below
+#  is able to use a hash to store the values and then iterate over the hash to create the output string. The regex is ridicoulous though.
+# def format_duration(total)
+# 	if total == 0
+# 		"now"
+# 	else
+# 		duration = {
+# 			year:   total / (60 * 60 * 24 * 365),
+# 			day:    total / (60 * 60 * 24) % 365,
+# 			hour:   total / (60 * 60) % 24,
+# 			minute: total / 60 % 60,
+# 			second: total % 60
+# 		}
+
+# 		@output = []
+
+# 		duration.each do |key, value|
+# 			if value > 0
+# 				@output << "#{value} #{key}"
+# 				@output.last << "s" if value != 1
+# 			end
+# 		end
+
+# 		@output.join(', ').gsub(/\,\s(?=\d+\s\w+$)/, " and ")
+# 	end
+# end
