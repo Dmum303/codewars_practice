@@ -20,7 +20,9 @@ class ChangeConverter
 
   def self.convert(amount)
     converted = []
-    amount_in_pence = (amount * 100).to_i
+    pounds, pence = amount.to_s.split(".").map(&:to_i)
+    amount_in_pence = pounds * 100 + pence
+    # binding.irb
     Denomination.each do |coin, value|
       if amount_in_pence / value >= 1
         (amount_in_pence / value).times { converted << coin }
