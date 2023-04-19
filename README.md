@@ -270,3 +270,25 @@ Different components have different unit of times. So there is not repeated unit
 A component will not appear at all if its value happens to be zero. Hence, 1 minute and 0 seconds is not valid, but it should be just 1 minute.
 
 A unit of time must be used "as much as possible". It means that the function should not return 61 seconds, but 1 minute and 1 second instead. Formally, the duration specified by of a component must not be greater than any valid more significant unit of time.
+
+# Change Converter
+
+Given a number in pounds and pence, work out the most efficient way of breaking it down into notes and coins, e.g. 11.55 becomes ["£10", "£1", "50p", "5p"]
+
+Acceptance Criteria
+change_generator.convert(6.42)
+=> ["£5", "£1", "20p", "20p", "2p"]
+change_generator.convert(40)
+=> ["£20", "£20"]
+change_generator.convert(16.30)
+=> ["£10", "£5", "£1", "20p", "10p"]
+change_generator.convert(19.99)
+=> ["£10", "£5", "£2", "£2", "50p", "20p", "20p", "5p", "2p", "2p"]
+change_generator.convert(76.81)
+=> ["£50", "£20", "£5", "£1", "50p", "20p", "10p", "1p"]
+Extension Options
+Write a program that takes an array of note and coin values and returns the result of summing these amounts, in £00.00 format.
+
+Write a change generator for a different currency e.g. USD.
+
+Turn you change converter into a cash machine, but pre-loading it with notes and change. Keep track of how much money it has dispensed, and notify the user when it runs out.
